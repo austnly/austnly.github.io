@@ -15,7 +15,11 @@
 @mixin headings {
 	&__head {
 		font-size: 2em;
-		margin: 5vw;
+		margin: 20px;
+
+		@include responsive.sm-up {
+			margin: 50px;
+		}
 
 		&--left {
 			text-align: left;
@@ -159,6 +163,7 @@ a {
 	@extend %unpad;
 	padding: 10px 0px;
 	color: white;
+	min-height: 100vh;
 }
 
 .landing {
@@ -265,6 +270,56 @@ a {
 	}
 }
 
+.projects {
+	@include headings;
+	background-image: linear-gradient(palette-1.$dbright, palette-1.$deeper);
+
+	&__group {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@include responsive.sm-up {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		&__item {
+			margin: 20px;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			max-width: 500px;
+
+			@include responsive.sm-up {
+				flex-wrap: nowrap;
+			}
+
+			&--title-card {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				// width: 100%;
+
+				// @include responsive.sm-up {
+				// 	width: 150px;
+				// }
+			}
+
+			img {
+				width: 150px;
+			}
+			p {
+				// width: 250px;
+				padding: 0 20px;
+			}
+		}
+	}
+}
+
 .study {
 	&__card {
 		padding: 5px 20px;
@@ -295,44 +350,6 @@ a {
 				&:hover {
 					filter: none;
 				}
-			}
-		}
-	}
-}
-
-.projects {
-	@include headings;
-	background-image: linear-gradient(palette-1.$dbright, palette-1.$deeper);
-
-	&__group {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-
-		&__item {
-			margin: 20px;
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-
-			&--title-card {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				width: 100%;
-
-				@include responsive.sm-up {
-					width: 150px;
-				}
-			}
-
-			img {
-				width: 150px;
-			}
-			p {
-				width: 250px;
-				padding: 0 20px;
 			}
 		}
 	}
@@ -374,6 +391,7 @@ footer {
 	flex-direction: column;
 	align-items: center;
 	padding: 20px;
+	min-height: 100px;
 
 	&__head {
 		margin: 0;
