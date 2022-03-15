@@ -109,8 +109,7 @@ a {
 .skills {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 .skills__head {
   font-size: 1.7em;
