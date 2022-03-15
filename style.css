@@ -3,21 +3,17 @@ body {
   font-family: "Roboto Mono", monospace;
 }
 
-footer, .study__card--item img, .study__card--item p, .page-block, .navbar__logo, .navbar, body, html, .navbar__container__menu {
+.about__study--item-img, .about__study--item-text, .page-block, .navbar__logo, .navbar, footer, body, html, .navbar__menu__container {
   margin: 0;
   padding: 0;
 }
 
-.navbar__container__menu {
+.navbar__menu__container {
   list-style: none;
 }
 
-body {
-  background-image: linear-gradient(#f4f8ff 5%, #436495, #436495);
-}
-
 a {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
@@ -26,83 +22,77 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: #f4f8ff;
+  width: 100%;
   position: fixed;
   top: 0;
-  width: 100%;
-  background-color: #f4f8ff;
   z-index: 1;
 }
 .navbar__logo {
   padding: 10px;
   margin-left: 5vw;
+  transition: 0.5s;
 }
 .navbar__logo:hover {
-  transition: 0.5s;
   color: #436495;
 }
-.navbar__container {
+.navbar__menu {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-.navbar__container__menu {
+.navbar__menu__container {
   display: none;
-  text-align: right;
-}
-.navbar__container__menu__item {
-  padding: 15px;
 }
 @media only screen and (min-width: 576px) {
-  .navbar__container__menu {
+  .navbar__menu__container {
     display: flex;
     flex-direction: row;
-    text-align: center;
-    font-size: 1em;
   }
-  .navbar__container__menu__item {
+  .navbar__menu__container__item {
     padding: 10px;
   }
-  .navbar__container__menu__item a:hover {
+  .navbar__menu__container__item a {
+    color: black;
     transition: 0.5s;
+  }
+  .navbar__menu__container__item a:hover {
     color: #436495;
   }
 }
 
 .content {
-  width: 100%;
+  background-image: linear-gradient(#f4f8ff 5%, #436495, #436495);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-block {
+  min-height: 100vh;
   padding: 10px 0px;
   color: white;
-  min-height: 100vh;
 }
 
 .landing {
-  max-width: 100%;
-  height: 100vh;
   color: black;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  padding: 0vw 5vw;
+  min-width: 80%;
+  padding: 0 5%;
+  text-align: right;
 }
 .landing__head {
   text-transform: lowercase;
   font-size: 3em;
-  text-align: right;
-}
-.landing__subhead {
-  text-align: right;
 }
 .landing__text {
-  color: black;
   background-color: black;
   transition: 0.2s;
 }
 .landing__text:hover {
-  transition: 0.2s;
   background-color: rgba(0, 0, 0, 0);
 }
 
@@ -138,8 +128,15 @@ a {
 .skills__card {
   padding: 10px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (min-width: 576px) {
+  .skills__card {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 .skills__card--item {
   font-size: 1.5em;
@@ -148,7 +145,7 @@ a {
   align-items: center;
   justify-content: center;
 }
-.skills__card--item p {
+.skills__card--item-text {
   margin-left: 10px;
 }
 
@@ -207,41 +204,17 @@ a {
   flex-direction: column;
   align-items: center;
 }
-.projects__group__item img {
-  width: 150px;
+.projects__group__item--thumbnail {
+  width: 200px;
 }
-.projects__group__item p {
+.projects__group__item--dscrb {
   padding: 0 20px;
-}
-
-.study__card {
-  padding: 5px 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-.study__card--item {
-  font-size: 1em;
-  text-align: right;
-  margin: 5px 40px;
-}
-.study__card--item p {
-  margin: 5px;
-  text-transform: uppercase;
-}
-.study__card--item img {
-  filter: brightness(0%) grayscale(100%) invert(100%);
-  transition: 0.5s;
-}
-.study__card--item img:hover {
-  filter: none;
 }
 
 .about {
   display: flex;
   flex-direction: column;
-  color: white;
+  margin-bottom: 50px;
 }
 .about__head {
   font-size: 1.7em;
@@ -267,28 +240,51 @@ a {
 .about__head--right {
   text-align: right;
 }
-.about__card {
+.about__study {
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.about__study--item {
+  margin: 5px 40px;
+  text-align: right;
+}
+.about__study--item-text {
+  margin: 5px;
+  text-transform: uppercase;
+}
+.about__study--item-img {
+  filter: brightness(0%) grayscale(100%) invert(100%);
+  transition: 0.5s;
+}
+.about__study--item-img:hover {
+  filter: none;
+}
+.about__me {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
-.about__card--img {
+.about__me--img {
+  max-width: 300px;
   border-radius: 200px;
-  margin: 0 5vw 5vw 0;
+  margin: 0 5vw;
 }
-.about__card--text {
+.about__me--text {
   max-width: 500px;
   padding: 10px;
 }
 
 .contact {
+  padding: 20px;
+  min-height: 100px;
   background-color: #4d5766;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  min-height: 100px;
 }
 .contact__head {
   font-size: 1.7em;

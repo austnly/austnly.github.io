@@ -5,65 +5,35 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
+
+		<!-- Font Awesome Icons -->
 		<script
 			src="https://kit.fontawesome.com/24b9b1a07c.js"
 			crossorigin="anonymous"
 		></script>
 
-		<script>
-			// function xButton(x) {
-			// 	x.classList.adddc ("change");
-			// }
-
-			// function hamButton(x) {
-			// 	x.classList.remove("change");
-			// }
-
-			// function expandMenu(x) {
-			// 	if (
-			// 		document.getElementById("navMenu").style.display == "none"
-			// 	) {
-			// 		document.getElementById("navMenu").style.display = "block";
-			// 		// document.getElementById("navMenu").classList.add("expand");
-			// 		xButton(x);
-			// 	} else {
-			// 		document.getElementById("navMenu").style.display = "none";
-			// 		// document
-			// 		// 	.getElementById("navMenu")
-			// 		// 	.classList.remove("expand");
-			// 		hamButton(x);
-			// 	}
-			// }
-		</script>
 		<title>Austin Ly | Software Developer</title>
 	</head>
 	<body id="home">
 		<header class="navbar">
 			<h2 class="navbar__logo">a_st_n.</h2>
-			<div class="navbar__container">
-				<!-- <div
-					class="navbar__container__hbtn"
-					onclick="expandMenu(this);"
-				>
-					<div class="bar1"></div>
-					<div class="bar2"></div>
-					<div class="bar3"></div>
-				</div> -->
+			<div class="navbar__menu">
+				<!-- menu to collapse with hamburger menu -->
 				<nav>
-					<ul class="navbar__container__menu" id="navMenu">
-						<li class="navbar__container__menu__item">
+					<ul class="navbar__menu__container">
+						<li class="navbar__menu__container__item">
 							<a href="#home">Home</a>
 						</li>
-						<li class="navbar__container__menu__item">
+						<li class="navbar__menu__container__item">
 							<a href="#skills">Skills</a>
 						</li>
-						<li class="navbar__container__menu__item">
+						<li class="navbar__menu__container__item">
 							<a href="#projects">Projects</a>
 						</li>
-						<li class="navbar__container__menu__item">
+						<li class="navbar__menu__container__item">
 							<a href="#about">About</a>
 						</li>
-						<li class="navbar__container__menu__item">
+						<li class="navbar__menu__container__item">
 							<a href="#contact">Contact</a>
 						</li>
 					</ul>
@@ -71,7 +41,9 @@
 			</div>
 		</header>
 
+		<!-- Content container for everything except footer -->
 		<div class="content">
+			<!-- Landing -->
 			<section class="landing page-block">
 				<h1 class="landing__head">Hi, I'm Austin!</h1>
 				<h4 class="landing__subhead">
@@ -80,6 +52,7 @@
 				<p class="landing__text">Dentist</p>
 			</section>
 
+			<!-- Tech Skills -->
 			<section id="skills" class="skills page-block">
 				<h2 class="skills__head skills__head--left">
 					I can code in
@@ -91,53 +64,63 @@
 
 				<div class="skills__card">
 					<div class="skills__card--item">
-						<i class="fa-brands fa-html5 fa-2xl"></i>
-						<p>HTML5</p>
+						<i
+							class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
+						></i>
+						<p class="skills__card--item-text">HTML5</p>
 					</div>
 					<div class="skills__card--item">
-						<i class="fa-brands fa-css3-alt fa-2xl"></i>
-						<p>CSS3</p>
+						<i
+							class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
+						></i>
+						<p class="skills__card--item-text">CSS3</p>
 					</div>
 					<div class="skills__card--item">
-						<i class="fa-brands fa-sass fa-2xl"></i>
-						<p>SASS</p>
+						<i
+							class="fa-brands fa-sass fa-2xl skills__card--item-icon"
+						></i>
+						<p class="skills__card--item-text">SASS</p>
 					</div>
 					<div class="skills__card--item">
-						<i class="fa-brands fa-html5 fa-2xl"></i>
-						<p>HTML5</p>
+						<i
+							class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
+						></i>
+						<p class="skills__card--item-text">HTML5</p>
 					</div>
 					<div class="skills__card--item">
-						<i class="fa-brands fa-css3-alt fa-2xl"></i>
-						<p>CSS3</p>
+						<i
+							class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
+						></i>
+						<p class="skills__card--item-text">CSS3</p>
 					</div>
 					<div class="skills__card--item">
-						<i class="fa-brands fa-sass fa-2xl"></i>
-						<p>SASS</p>
+						<i
+							class="fa-brands fa-sass fa-2xl skills__card--item-icon"
+						></i>
+						<p class="skills__card--item-text">SASS</p>
 					</div>
 					<div class="skills__card--item">
-						<i class="fa-brands fa-html5 fa-2xl"></i>
-						<p>HTML5</p>
+						<i
+							class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
+						></i>
+						<p class="skills__card--item-text">HTML5</p>
 					</div>
 					<div class="skills__card--item">
-						<i class="fa-brands fa-css3-alt fa-2xl"></i>
-						<p>CSS3</p>
+						<i
+							class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
+						></i>
+						<p class="skills__card--item-text">CSS3</p>
 					</div>
 					<div class="skills__card--item">
-						<i class="fa-brands fa-sass fa-2xl"></i>
-						<p>SASS</p>
+						<i
+							class="fa-brands fa-sass fa-2xl skills__card--item-icon"
+						></i>
+						<p class="skills__card--item-text">SASS</p>
 					</div>
 				</div>
-
-				<!-- <div class="skills__card">
-					<h2 class="skills__card--head">Other Skills</h2>
-					<ul class="skills__card--list">
-						<li>Growth mindset</li>
-						<li>Excellent verbal and written commmunication</li>
-						<li>Can fix your teeth</li>
-					</ul>
-				</div> -->
 			</section>
 
+			<!-- Projects -->
 			<section id="projects" class="projects page-block">
 				<h2 class="projects__head projects__head--center">
 					I've worked on
@@ -146,8 +129,11 @@
 						style="--fa-fade-opacity: 0"
 					></i>
 				</h2>
+
 				<div class="projects__group">
+					<!-- Each project is a group item -->
 					<div class="projects__group__item">
+						<!-- Each project has a title-card with picture, name and link -->
 						<div class="projects__group__item--title-card">
 							<img
 								src="placeholder.jpg"
@@ -163,6 +149,7 @@
 							</div>
 						</div>
 
+						<!-- Each project has a description -->
 						<p class="projects__group__item--dscrb">
 							Lorem ipsum dolor sit amet, consectetur adipiscing
 							elit, sed do eiusmod tempor incididunt ut labore et
@@ -222,8 +209,10 @@
 				</div>
 			</section>
 
+			<!-- About Section -->
 			<section id="about" class="about page-block">
-				<h2 class="skills__head skills__head--right">
+				<!-- Studies Sub-section -->
+				<h2 class="about__head about__head--right">
 					I've studied
 					<i
 						class="fa-solid fa-window-minimize fa-fade"
@@ -231,29 +220,47 @@
 					></i>
 				</h2>
 
-				<div class="study__card">
+				<div class="about__study">
 					<!-- make these expandable with subjects covered -->
-					<div class="study__card--item">
-						<p>Graduate Certificate of Information Technology</p>
-						<p>2021</p>
+					<div class="about__study--item">
+						<p class="about__study--item-text">
+							Graduate Certificate of Information Technology
+						</p>
+						<p class="about__study--item-text">2021</p>
 						<img
 							src="./images/macquarie-university-1.svg"
 							width="100px"
 							alt=""
+							class="about__study--item-img"
 						/>
 					</div>
-					<div class="study__card--item">
-						<p>Graduate Certificate in Data Analytics</p>
-						<p>2021</p>
-						<img src="./images/mit.png" width="100px" alt="" />
+					<div class="about__study--item">
+						<p class="about__study--item-text">
+							Graduate Certificate in Data Analytics
+						</p>
+						<p class="about__study--item-text">2021</p>
+						<img
+							src="./images/mit.png"
+							width="100px"
+							alt=""
+							class="about__study--item-img"
+						/>
 					</div>
-					<div class="study__card--item">
-						<p>Bachelor of Dental Science (Honours)</p>
-						<p>2016</p>
-						<img src="./images/uq.svg" width="100px" alt="" />
+					<div class="about__study--item">
+						<p class="about__study--item-text">
+							Bachelor of Dental Science (Honours)
+						</p>
+						<p class="about__study--item-text">2016</p>
+						<img
+							src="./images/uq.svg"
+							width="100px"
+							alt=""
+							class="about__study--item-img"
+						/>
 					</div>
 				</div>
 
+				<!-- About Me Subsection -->
 				<h2 class="about__head about__head--left">
 					I am
 					<i
@@ -261,13 +268,13 @@
 						style="--fa-fade-opacity: 0"
 					></i>
 				</h2>
-				<div class="about__card">
+				<div class="about__me">
 					<img
-						class="about__card--img"
+						class="about__me--img"
 						src="placeholder.jpg"
 						class="about__img"
 					/>
-					<p class="about__card--text">
+					<p class="about__me--text">
 						I'm Austin, a software developer in training based in
 						Canberra, Australia. I love building and automating
 						things, and learning all things tech and data. I also
@@ -276,88 +283,23 @@
 					</p>
 				</div>
 			</section>
-
-			<footer id="contact" class="contact page-block">
-				<h2 class="contact__head contact__head--center">
-					Get In Touch
-				</h2>
-				<p class="contact__text">Email: austinly@icloud.com</p>
-				<div>
-					<i class="fa-brands fa-linkedin fa-2xl"></i>
-					<i class="fa-brands fa-github fa-2xl"></i>
-				</div>
-			</footer>
 		</div>
 
-		<!-- <nav class="navbar">
-			<h2>a_st_n.</h2>
-			<ul>
-				<li>Home</li>
-				<li>About</li>
-				<li>Skills</li>
-				<li>Projects</li>
-				<li>Contact</li>
-			</ul>
-		</nav>
-		<div class="landing section">
-			<img src="placeholder.jpg" alt="AustinLy" /> 
-			<h3>Hey, I'm Austin!</h3>
-			<p>_nology Software Development Trainee</p>
-			<p>Part-time Dentist</p>
-		</div>
-
-		<div class="about section">
-			<img src="placeholder.jpg" alt="AustinLy" />
+		<!-- Footer Contact section -->
+		<footer id="contact" class="contact page-block">
+			<h2 class="contact__head contact__head--center">Get In Touch</h2>
+			<i class="fa-solid fa-envelope fa-2xl"></i>
+			<a href="mailto:austinly@icloud.com"
+				><p class="contact__text">austinly@icloud.com</p></a
+			>
 			<div>
-				<h2>About Me</h2>
-				<p>
-					I'm Austin, a software developer in training based in
-					Canberra, Australia. I love building and automating things,
-					and learning all things tech and data. I also have an
-					interest in healthcare, being a qualified dentist. Perhaps
-					I've even cleaned your teeth!
-				</p>
+				<a href="https://www.linkedin.com/in/austin-ly/" target="_blank"
+					><i class="fa-brands fa-linkedin fa-2xl"></i
+				></a>
+				<a href="https://github.com/austnly" target="_blank"
+					><i class="fa-brands fa-github fa-2xl"></i
+				></a>
 			</div>
-		</div>
-
-		<div class="skills section">
-			<div>
-				<h2>Qualifications</h2>
-				<ul>
-					<li>Grad Cert IT</li>
-					<li>Grad Cert Data Analytics</li>
-					<li>B Dental Science (Hons)</li>
-				</ul>
-			</div>
-			<div>
-				<h2>Tech Stack</h2>
-				<ul>
-					<li>HTML</li>
-					<li>CSS</li>
-					<li>SASS/SCSS</li>
-					<li>JavaScript</li>
-					<li>Java</li>
-					<li>Python</li>
-				</ul>
-			</div>
-		</div>
-
-		<div class="projects section">
-			<h2>Projects</h2>
-			<div>
-				<div>
-					<img src="placeholder2.jpg" />
-					<h4>Project #1</h4>
-					<p>Project description.</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="footer section">
-			<ul>
-				<li>Home</li>
-				<li>Contact</li>
-			</ul>
-		</div> -->
+		</footer>
 	</body>
 </html>
