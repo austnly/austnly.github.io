@@ -12,10 +12,8 @@ body {
   list-style: none;
 }
 
-html,
 body {
-  width: 100vw;
-  overflow-x: hidden;
+  background-image: linear-gradient(#f4f8ff 5%, #436495, #436495);
 }
 
 a {
@@ -69,7 +67,6 @@ a {
 }
 
 .content {
-  background-image: linear-gradient(#f4f8ff 5%, #436495, #436495);
   display: flex;
   flex-direction: column;
   align-items: center;
