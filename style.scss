@@ -177,8 +177,7 @@ a {
 		background-color: palette.$landing-text;
 		transition: 0.2s;
 
-		&:hover,
-		&:active {
+		&:hover {
 			background-color: rgba(0, 0, 0, 0);
 		}
 	}

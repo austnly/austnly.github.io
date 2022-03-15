@@ -94,7 +94,7 @@ a {
   background-color: black;
   transition: 0.2s;
 }
-.landing__text:hover, .landing__text:active {
+.landing__text:hover {
   background-color: rgba(0, 0, 0, 0);
 }
 
