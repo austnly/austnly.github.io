@@ -12,10 +12,6 @@ body {
   list-style: none;
 }
 
-body {
-  background-image: linear-gradient(#f4f8ff 5%, #436495, #436495);
-}
-
 a {
   color: white;
   text-decoration: none;
@@ -71,6 +67,7 @@ a {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  background-image: linear-gradient(#f4f8ff 5%, #436495, #436495);
 }
 
 .page-block {
