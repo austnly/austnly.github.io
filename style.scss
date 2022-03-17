@@ -75,6 +75,7 @@ a {
 
 	background-color: palette.$lightest;
 	width: 100%;
+	transition: 3s;
 
 	// Keeps navbar at top of window and top layer
 	position: fixed;
@@ -97,34 +98,63 @@ a {
 		flex-direction: column;
 		align-items: flex-end;
 
+		&__hBtn {
+			margin: 10px;
+			cursor: pointer;
+
+			@include responsive.sm-up {
+				display: none;
+			}
+
+			div {
+				background-color: palette.$landing-text;
+				width: 35px;
+				height: 5px;
+				margin-top: 6px;
+				border-radius: 4px;
+			}
+		}
+
 		&__container {
 			@extend %unlist;
 
 			// Links do not show on small screens
 			// To change to hamburger menu
+
 			display: none;
+
+			&.--active {
+				display: flex;
+				flex-direction: column;
+				text-align: right;
+			}
+
+			&__item {
+				padding: 10px;
+
+				a {
+					color: palette.$landing-text;
+					transition: 0.5s;
+				}
+
+				a:hover {
+					color: palette.$deeper;
+				}
+			}
 
 			// Links show on larger screens
 			@include responsive.sm-up {
 				display: flex;
 				flex-direction: row;
-
-				&__item {
-					padding: 10px;
-
-					a {
-						color: palette.$landing-text;
-						transition: 0.5s;
-					}
-
-					a:hover {
-						color: palette.$deeper;
-					}
-				}
 			}
 		}
 	}
 }
+
+// .navbar__menu__container.--active {
+// 	display: flex;
+// 	flex-direction: column;
+// }
 
 .content {
 	display: flex;
@@ -138,6 +168,10 @@ a {
 		palette.$deeper,
 		palette.$deepest
 	);
+
+	&.-active {
+		padding-top: 0;
+	}
 }
 
 .page-block {
@@ -241,7 +275,8 @@ a {
 		}
 
 		&__item {
-			margin: 20px;
+			padding: 20px;
+			margin: 10px;
 
 			// Each item card is 500px wide and will wrap to a single column on a small screen
 			display: flex;
@@ -250,6 +285,10 @@ a {
 			justify-content: center;
 			align-items: center;
 			max-width: 500px;
+
+			background-color: palette.$lightest;
+			color: palette.$landing-text;
+			border-radius: 10px;
 
 			// Item cards will not wrap on larger screens
 			@include responsive.sm-up {

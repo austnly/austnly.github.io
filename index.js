@@ -7,3 +7,15 @@ function touchHover(x) {
 		x.style.backgroundColor = x.style.color;
 	}, 1000);
 }
+
+const toggleMenu = () => {
+	let menu = document.querySelector(".navbar__menu__container");
+	let content = document.querySelector(".content");
+	let contentActive = document.querySelector(".-active");
+
+	menu.classList.toggle("--active");
+	// content.classList.toggle("-active");
+
+	// contentActive.style.paddingTop =
+	// 	document.querySelector(".navbar").offsetHeight + "px";
+};

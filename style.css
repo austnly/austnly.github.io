@@ -25,6 +25,7 @@ a {
   align-items: center;
   background-color: #f4f8ff;
   width: 100%;
+  transition: 3s;
   position: fixed;
   top: 0;
   z-index: 1;
@@ -42,23 +43,44 @@ a {
   flex-direction: column;
   align-items: flex-end;
 }
+.navbar__menu__hBtn {
+  margin: 10px;
+  cursor: pointer;
+}
+@media only screen and (min-width: 576px) {
+  .navbar__menu__hBtn {
+    display: none;
+  }
+}
+.navbar__menu__hBtn div {
+  background-color: black;
+  width: 35px;
+  height: 5px;
+  margin-top: 6px;
+  border-radius: 4px;
+}
 .navbar__menu__container {
   display: none;
+}
+.navbar__menu__container.--active {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+.navbar__menu__container__item {
+  padding: 10px;
+}
+.navbar__menu__container__item a {
+  color: black;
+  transition: 0.5s;
+}
+.navbar__menu__container__item a:hover {
+  color: #436495;
 }
 @media only screen and (min-width: 576px) {
   .navbar__menu__container {
     display: flex;
     flex-direction: row;
-  }
-  .navbar__menu__container__item {
-    padding: 10px;
-  }
-  .navbar__menu__container__item a {
-    color: black;
-    transition: 0.5s;
-  }
-  .navbar__menu__container__item a:hover {
-    color: #436495;
   }
 }
 
@@ -68,6 +90,9 @@ a {
   align-items: center;
   width: 100%;
   background-image: linear-gradient(#f4f8ff 5%, #436495, #436495);
+}
+.content.-active {
+  padding-top: 0;
 }
 
 .page-block {
@@ -190,13 +215,17 @@ a {
   }
 }
 .projects__group__item {
-  margin: 20px;
+  padding: 20px;
+  margin: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   max-width: 500px;
+  background-color: #f4f8ff;
+  color: black;
+  border-radius: 10px;
 }
 @media only screen and (min-width: 576px) {
   .projects__group__item {
