@@ -2,412 +2,417 @@
 @use "typography";
 @use "responsive";
 
-%unpad {
-	margin: 0;
-	padding: 0;
-}
+@import "./node_modules/bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=League+Gothic&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-%unlist {
-	list-style: none;
-	@extend %unpad;
-}
+$font-family-sans-serif: "Roboto Mono", monospace;
 
-@mixin headings {
-	&__head {
-		font-size: 1.7em;
-		margin: 20px;
-		transition: 0.5s;
+// %unpad {
+// 	margin: 0;
+// 	padding: 0;
+// }
 
-		@include responsive.sm-up {
-			margin: 50px;
-			font-size: 2em;
-		}
+// %unlist {
+// 	list-style: none;
+// 	@extend %unpad;
+// }
 
-		@include responsive.lg-up {
-			margin: 100px;
-		}
+// @mixin headings {
+// 	&__head {
+// 		font-size: 1.7em;
+// 		margin: 20px;
+// 		transition: 0.5s;
 
-		&--left {
-			text-align: left;
-		}
+// 		@include responsive.sm-up {
+// 			margin: 50px;
+// 			font-size: 2em;
+// 		}
 
-		&--center {
-			text-align: center;
-		}
+// 		@include responsive.lg-up {
+// 			margin: 100px;
+// 		}
 
-		&--right {
-			text-align: right;
-		}
-	}
-}
+// 		&--left {
+// 			text-align: left;
+// 		}
 
-html {
-	@extend %unpad;
-}
+// 		&--center {
+// 			text-align: center;
+// 		}
+
+// 		&--right {
+// 			text-align: right;
+// 		}
+// 	}
+// }
+
+// html {
+// 	@extend %unpad;
+// }
 
 body {
-	@extend %unpad;
+	// @extend %unpad;
 	@extend %use-roboto-m;
 }
 
-footer {
-	@extend %unpad;
-}
-
-a {
-	color: palette.$text-color;
-	text-decoration: none;
-}
-
-.navbar {
-	@extend %unpad;
-	display: flex;
-	flex-direction: row;
-
-	color: palette.$landing-text;
-	// justify-content: center;
-	// align-items: center;
-
-	// @include responsive.sm-up {
-	justify-content: space-between;
-	align-items: center;
-	// }
-
-	background-color: palette.$lightest;
-	width: 100%;
-	transition: 3s;
-
-	// Keeps navbar at top of window and top layer
-	position: fixed;
-	top: 0;
-	z-index: 1;
-
-	&__logo {
-		@extend %unpad;
-		padding: 10px;
-		margin-left: 5vw;
-		transition: 1s;
-
-		&:hover {
-			color: palette.$deeper;
-		}
-	}
-
-	&__menu {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-
-		&__hBtn {
-			margin: 10px;
-			cursor: pointer;
-
-			@include responsive.sm-up {
-				display: none;
-			}
-
-			div {
-				background-color: palette.$landing-text;
-				width: 35px;
-				height: 5px;
-				margin-top: 6px;
-				border-radius: 4px;
-			}
-		}
-
-		&__container {
-			@extend %unlist;
-
-			// Links do not show on small screens
-			// To change to hamburger menu
-
-			display: none;
-
-			&.--active {
-				display: flex;
-				flex-direction: column;
-				text-align: right;
-			}
-
-			&__item {
-				padding: 10px;
-
-				a {
-					color: palette.$landing-text;
-					transition: 0.5s;
-				}
-
-				a:hover {
-					color: palette.$deeper;
-				}
-			}
-
-			// Links show on larger screens
-			@include responsive.sm-up {
-				display: flex;
-				flex-direction: row;
-			}
-		}
-	}
-}
-
-// .navbar__menu__container.--active {
-// 	display: flex;
-// 	flex-direction: column;
+// footer {
+// 	@extend %unpad;
 // }
 
-.content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
+// a {
+// 	color: palette.$text-color;
+// 	text-decoration: none;
+// }
 
-	// Background gradient
-	background-image: linear-gradient(
-		palette.$lightest 5%,
-		palette.$deeper,
-		palette.$deepest
-	);
+// .navbar {
+// 	@extend %unpad;
+// 	display: flex;
+// 	flex-direction: row;
 
-	&.-active {
-		padding-top: 0;
-	}
-}
+// 	color: palette.$landing-text;
+// 	// justify-content: center;
+// 	// align-items: center;
 
-.page-block {
-	@extend %unpad;
-	// Padding and height for each section
+// 	// @include responsive.sm-up {
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	// }
 
-	min-height: 100vh;
-	padding: 50px 0px;
+// 	background-color: palette.$lightest;
+// 	width: 100%;
+// 	transition: 3s;
 
-	// Text color for most content
-	color: palette.$text-color;
+// 	// Keeps navbar at top of window and top layer
+// 	position: fixed;
+// 	top: 0;
+// 	z-index: 1;
 
-	@include responsive.sm-up {
-		padding: 10px 0px;
-	}
-}
+// 	&__logo {
+// 		@extend %unpad;
+// 		padding: 10px;
+// 		margin-left: 5vw;
+// 		transition: 1s;
 
-.landing {
-	// Text color overwritten to black
-	color: palette.$landing-text;
+// 		&:hover {
+// 			color: palette.$deeper;
+// 		}
+// 	}
 
-	// background-image: linear-gradient(palette.$lightest 10%, palette.$bright);
+// 	&__menu {
+// 		display: flex;
+// 		flex-direction: column;
+// 		align-items: flex-end;
 
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	justify-content: center;
+// 		&__hBtn {
+// 			margin: 10px;
+// 			cursor: pointer;
 
-	min-width: 80%;
-	// width: 100%;
+// 			@include responsive.sm-up {
+// 				display: none;
+// 			}
 
-	text-align: right;
+// 			div {
+// 				background-color: palette.$landing-text;
+// 				width: 35px;
+// 				height: 5px;
+// 				margin-top: 6px;
+// 				border-radius: 4px;
+// 			}
+// 		}
 
-	&__head {
-		text-transform: lowercase;
-		font-size: 3em;
-		// margin-right: 10%;
-	}
+// 		&__container {
+// 			@extend %unlist;
 
-	&__subhead {
-		// margin-right: 10%;
-	}
+// 			// Links do not show on small screens
+// 			// To change to hamburger menu
 
-	&__text {
-		background-color: palette.$landing-text;
-		transition: 0.2s;
+// 			display: none;
 
-		// margin-right: 10%;
+// 			&.--active {
+// 				display: flex;
+// 				flex-direction: column;
+// 				text-align: right;
+// 			}
 
-		&:hover {
-			background-color: rgba(0, 0, 0, 0);
-		}
-	}
-}
+// 			&__item {
+// 				padding: 10px;
 
-.skills {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+// 				a {
+// 					color: palette.$landing-text;
+// 					transition: 0.5s;
+// 				}
 
-	@include headings;
+// 				a:hover {
+// 					color: palette.$deeper;
+// 				}
+// 			}
 
-	// skills__card contains all coding items
-	&__card {
-		padding: 10px;
+// 			// Links show on larger screens
+// 			@include responsive.sm-up {
+// 				display: flex;
+// 				flex-direction: row;
+// 			}
+// 		}
+// 	}
+// }
 
-		// Single column on small screens
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+// // .navbar__menu__container.--active {
+// // 	display: flex;
+// // 	flex-direction: column;
+// // }
 
-		@include responsive.sm-up {
-			// Centered and wrapped for responsiveness
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
+// .content {
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	width: 100%;
 
-		// Class for each item (logo + text)
-		&--item {
-			font-size: 1.5em;
-			width: 150px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+// 	// Background gradient
+// 	background-image: linear-gradient(
+// 		palette.$lightest 5%,
+// 		palette.$deeper,
+// 		palette.$deepest
+// 	);
 
-			// &-icon {
-			// }
+// 	&.-active {
+// 		padding-top: 0;
+// 	}
+// }
 
-			&-text {
-				margin-left: 10px;
-			}
-		}
-	}
-}
+// .page-block {
+// 	@extend %unpad;
+// 	// Padding and height for each section
 
-.projects {
-	@include headings;
+// 	min-height: 100vh;
+// 	padding: 50px 0px;
 
-	&__group {
-		// Single column list centered on small screens
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+// 	// Text color for most content
+// 	color: palette.$text-color;
 
-		// Centered esponsive row list on larger screens
-		@include responsive.sm-up {
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
+// 	@include responsive.sm-up {
+// 		padding: 10px 0px;
+// 	}
+// }
 
-		&__item {
-			padding: 20px;
-			margin: 10px;
+// .landing {
+// 	// Text color overwritten to black
+// 	color: palette.$landing-text;
 
-			// Each item card is 500px wide and will wrap to a single column on a small screen
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-			max-width: 500px;
+// 	// background-image: linear-gradient(palette.$lightest 10%, palette.$bright);
 
-			background-color: rgba(palette.$lightest, 0.5);
-			color: palette.$landing-text;
-			border-radius: 10px;
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: flex-end;
+// 	justify-content: center;
 
-			// Item cards will not wrap on larger screens
-			@include responsive.sm-up {
-				flex-wrap: nowrap;
-			}
+// 	min-width: 80%;
+// 	// width: 100%;
 
-			// Title cards display thumbnail, name and links in a column
-			&--title-card {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-			}
+// 	text-align: right;
 
-			&--thumbnail {
-				width: 200px;
-				border-radius: 20px;
-			}
+// 	&__head {
+// 		text-transform: lowercase;
+// 		font-size: 3em;
+// 		// margin-right: 10%;
+// 	}
 
-			&--dscrb {
-				padding: 0 20px;
-			}
-		}
-	}
-}
+// 	// &__subhead {
+// 	// 	// margin-right: 10%;
+// 	// }
 
-.about {
-	display: flex;
-	flex-direction: column;
+// 	&__text {
+// 		background-color: palette.$landing-text;
+// 		transition: 0.2s;
 
-	margin-bottom: 50px;
+// 		// margin-right: 10%;
 
-	@include headings;
+// 		&:hover {
+// 			background-color: rgba(0, 0, 0, 0);
+// 		}
+// 	}
+// }
 
-	&__study {
-		padding: 0px 20px;
+// .skills {
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: center;
 
-		// Responsive list of studies
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: flex-end;
+// 	@include headings;
 
-		&--item {
-			margin: 5px 40px;
+// 	// skills__card contains all coding items
+// 	&__card {
+// 		padding: 10px;
 
-			text-align: right;
+// 		// Single column on small screens
+// 		display: flex;
+// 		flex-direction: column;
+// 		align-items: center;
 
-			&-text {
-				@extend %unpad;
-				margin: 5px;
-				text-transform: uppercase;
-			}
+// 		@include responsive.sm-up {
+// 			// Centered and wrapped for responsiveness
+// 			flex-direction: row;
+// 			flex-wrap: wrap;
+// 			justify-content: center;
+// 		}
 
-			&-img {
-				@extend %unpad;
+// 		// Class for each item (logo + text)
+// 		&--item {
+// 			font-size: 1.5em;
+// 			width: 150px;
+// 			display: flex;
+// 			align-items: center;
+// 			justify-content: center;
 
-				// Make image white
-				filter: brightness(0%) grayscale(100%) invert(100%);
-				transition: 0.5s;
+// 			// &-icon {
+// 			// }
 
-				&:hover {
-					filter: none;
-				}
-			}
-		}
-	}
-	// &__container {
-	// 	// background-color: white;
-	// 	color: black;
-	// }
+// 			&-text {
+// 				margin-left: 10px;
+// 			}
+// 		}
+// 	}
+// }
 
-	&__me {
-		// Centered and responsive wrapping blurb and photo
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
+// .projects {
+// 	@include headings;
 
-		&--img {
-			max-width: 300px;
-			border-radius: 200px;
-			margin: 0 5vw;
-		}
+// 	&__group {
+// 		// Single column list centered on small screens
+// 		display: flex;
+// 		flex-direction: column;
+// 		align-items: center;
 
-		&--text {
-			max-width: 500px;
-			padding: 10px;
-		}
-	}
-}
+// 		// Centered esponsive row list on larger screens
+// 		@include responsive.sm-up {
+// 			flex-direction: row;
+// 			flex-wrap: wrap;
+// 			justify-content: center;
+// 		}
 
-.contact {
-	@include headings;
+// 		&__item {
+// 			padding: 20px;
+// 			margin: 10px;
 
-	padding: 20px;
-	min-height: 50vh;
-	background-color: palette.$darkest;
+// 			// Each item card is 500px wide and will wrap to a single column on a small screen
+// 			display: flex;
+// 			flex-direction: row;
+// 			flex-wrap: wrap;
+// 			justify-content: center;
+// 			align-items: center;
+// 			max-width: 500px;
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+// 			background-color: rgba(palette.$lightest, 0.5);
+// 			color: palette.$landing-text;
+// 			border-radius: 10px;
 
-	&__head {
-		margin: 0;
-		padding: 20px;
-	}
+// 			// Item cards will not wrap on larger screens
+// 			@include responsive.sm-up {
+// 				flex-wrap: nowrap;
+// 			}
 
-	&__text {
-		text-align: center;
-	}
-}
+// 			// Title cards display thumbnail, name and links in a column
+// 			&--title-card {
+// 				display: flex;
+// 				flex-direction: column;
+// 				align-items: center;
+// 			}
+
+// 			&--thumbnail {
+// 				width: 200px;
+// 				border-radius: 20px;
+// 			}
+
+// 			&--dscrb {
+// 				padding: 0 20px;
+// 			}
+// 		}
+// 	}
+// }
+
+// .about {
+// 	display: flex;
+// 	flex-direction: column;
+
+// 	margin-bottom: 50px;
+
+// 	@include headings;
+
+// 	&__study {
+// 		padding: 0px 20px;
+
+// 		// Responsive list of studies
+// 		display: flex;
+// 		flex-direction: row;
+// 		flex-wrap: wrap;
+// 		justify-content: flex-end;
+
+// 		&--item {
+// 			margin: 5px 40px;
+
+// 			text-align: right;
+
+// 			&-text {
+// 				@extend %unpad;
+// 				margin: 5px;
+// 				text-transform: uppercase;
+// 			}
+
+// 			&-img {
+// 				@extend %unpad;
+
+// 				// Make image white
+// 				filter: brightness(0%) grayscale(100%) invert(100%);
+// 				transition: 0.5s;
+
+// 				&:hover {
+// 					filter: none;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	// &__container {
+// 	// 	// background-color: white;
+// 	// 	color: black;
+// 	// }
+
+// 	&__me {
+// 		// Centered and responsive wrapping blurb and photo
+// 		display: flex;
+// 		flex-direction: row;
+// 		flex-wrap: wrap;
+// 		justify-content: center;
+
+// 		&--img {
+// 			max-width: 300px;
+// 			border-radius: 200px;
+// 			margin: 0 5vw;
+// 		}
+
+// 		&--text {
+// 			max-width: 500px;
+// 			padding: 10px;
+// 		}
+// 	}
+// }
+
+// .contact {
+// 	@include headings;
+
+// 	padding: 20px;
+// 	min-height: 50vh;
+// 	background-color: palette.$darkest;
+
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	justify-content: center;
+
+// 	&__head {
+// 		margin: 0;
+// 		padding: 20px;
+// 	}
+
+// 	&__text {
+// 		text-align: center;
+// 	}
+// }

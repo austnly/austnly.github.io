@@ -8,6 +8,7 @@
 			content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 		/>
 		<link rel="stylesheet" href="style.css" />
+		<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 
 		<!-- Font Awesome Icons -->
 		<script
@@ -20,10 +21,72 @@
 		<title>Austin Ly | Software Developer</title>
 	</head>
 	<body id="home">
-		<header class="navbar">
+		<nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#home">a_st_n.</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarTogglerDemo02"
+					aria-controls="navbarTogglerDemo02"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a
+								class="nav-link active"
+								aria-current="page"
+								href="#"
+								>Home</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a
+								class="nav-link active"
+								aria-current="page"
+								href="#skills"
+								>Skills</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link active"
+								aria-current="page"
+								href="#projects"
+								>Projects</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link active"
+								aria-current="page"
+								href="#about"
+								>About</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link active"
+								aria-current="page"
+								href="#contact"
+								>Contact</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- <header class="navbar">
 			<h2 class="navbar__logo">a_st_n.</h2>
 			<div class="navbar__menu">
-				<!-- menu to collapse with hamburger menu -->
+				menu to collapse with hamburger menu 
 				<div class="navbar__menu__hBtn" onclick="toggleMenu();">
 					<div class="navbar__menu__hBtn--bar1"></div>
 					<div class="navbar__menu__hBtn--bar2"></div>
@@ -49,257 +112,254 @@
 					</ul>
 				</nav>
 			</div>
-		</header>
+		</header> -->
 
 		<!-- Content container for everything except footer -->
-		<div class="content">
-			<!-- Landing -->
-			<section class="landing page-block">
-				<h1 class="landing__head">Hi, I'm Austin!</h1>
-				<h4 class="landing__subhead">
-					_nology Software Development Trainee
-				</h4>
-				<p class="landing__text" onclick="touchHover(this);">Dentist</p>
-			</section>
+		<!-- <div class="content"> -->
+		<!-- Landing -->
+		<section class="container">
+			<h1 class="row">Hi, I'm Austin!</h1>
+			<h4 class="row">_nology Software Development Trainee</h4>
+			<p class="row" onclick="touchHover(this);">Dentist</p>
+		</section>
 
-			<!-- Tech Skills -->
-			<section id="skills" class="skills page-block">
-				<h2 class="skills__head skills__head--left">
-					I can code in
+		<!-- Tech Skills -->
+		<section id="skills" class="container">
+			<h2 class="row">
+				I can code in
+				<i
+					class="fa-solid fa-window-minimize fa-fade"
+					style="--fa-fade-opacity: 0"
+				></i>
+			</h2>
+
+			<div class="row">
+				<div class="col">
 					<i
-						class="fa-solid fa-window-minimize fa-fade"
-						style="--fa-fade-opacity: 0"
+						class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
 					></i>
-				</h2>
-
-				<div class="skills__card">
-					<div class="skills__card--item">
-						<i
-							class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
-						></i>
-						<p class="skills__card--item-text">HTML5</p>
-					</div>
-					<div class="skills__card--item">
-						<i
-							class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
-						></i>
-						<p class="skills__card--item-text">CSS3</p>
-					</div>
-					<div class="skills__card--item">
-						<i
-							class="fa-brands fa-sass fa-2xl skills__card--item-icon"
-						></i>
-						<p class="skills__card--item-text">SASS</p>
-					</div>
-					<div class="skills__card--item">
-						<i
-							class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
-						></i>
-						<p class="skills__card--item-text">HTML5</p>
-					</div>
-					<div class="skills__card--item">
-						<i
-							class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
-						></i>
-						<p class="skills__card--item-text">CSS3</p>
-					</div>
-					<div class="skills__card--item">
-						<i
-							class="fa-brands fa-sass fa-2xl skills__card--item-icon"
-						></i>
-						<p class="skills__card--item-text">SASS</p>
-					</div>
-					<div class="skills__card--item">
-						<i
-							class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
-						></i>
-						<p class="skills__card--item-text">HTML5</p>
-					</div>
-					<div class="skills__card--item">
-						<i
-							class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
-						></i>
-						<p class="skills__card--item-text">CSS3</p>
-					</div>
-					<div class="skills__card--item">
-						<i
-							class="fa-brands fa-sass fa-2xl skills__card--item-icon"
-						></i>
-						<p class="skills__card--item-text">SASS</p>
-					</div>
+					<p class="skills__card--item-text">HTML5</p>
 				</div>
-			</section>
-
-			<!-- Projects -->
-			<section id="projects" class="projects page-block">
-				<h2 class="projects__head projects__head--center">
-					I've worked on
+				<div class="col">
 					<i
-						class="fa-solid fa-window-minimize fa-fade"
-						style="--fa-fade-opacity: 0"
+						class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
 					></i>
-				</h2>
-
-				<div class="projects__group">
-					<!-- Each project is a group item -->
-					<div class="projects__group__item">
-						<!-- Each project has a title-card with picture, name and link -->
-						<div class="projects__group__item--title-card">
-							<img
-								src="placeholder.jpg"
-								class="projects__group__item--thumbnail"
-								alt=""
-							/>
-							<h3 class="projects__group__item--name">
-								Project Name
-							</h3>
-							<div class="projects__group__item--links">
-								<i class="fa-solid fa-code"></i>
-								<i class="fa-solid fa-rocket"></i>
-							</div>
-						</div>
-
-						<!-- Each project has a description -->
-						<p class="projects__group__item--dscrb">
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis
-							nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat.
-						</p>
-					</div>
-					<div class="projects__group__item">
-						<div class="projects__group__item--title-card">
-							<img
-								src="placeholder.jpg"
-								class="projects__group__item--thumbnail"
-								alt=""
-							/>
-							<h3 class="projects__group__item--name">
-								Project Name
-							</h3>
-							<div class="projects__group__item--links">
-								<i class="fa-solid fa-code"></i>
-								<i class="fa-solid fa-rocket"></i>
-							</div>
-						</div>
-
-						<p class="projects__group__item--dscrb">
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis
-							nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat.
-						</p>
-					</div>
-					<div class="projects__group__item">
-						<div class="projects__group__item--title-card">
-							<img
-								src="placeholder.jpg"
-								class="projects__group__item--thumbnail"
-								alt=""
-							/>
-							<h3 class="projects__group__item--name">
-								Project Name
-							</h3>
-							<div class="projects__group__item--links">
-								<i class="fa-solid fa-code"></i>
-								<i class="fa-solid fa-rocket"></i>
-							</div>
-						</div>
-
-						<p class="projects__group__item--dscrb">
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis
-							nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat.
-						</p>
-					</div>
+					<p class="skills__card--item-text">CSS3</p>
 				</div>
-			</section>
-
-			<!-- About Section -->
-			<section id="about" class="about page-block">
-				<!-- Studies Sub-section -->
-				<h2 class="about__head about__head--right">
-					I've studied
+				<div class="col">
 					<i
-						class="fa-solid fa-window-minimize fa-fade"
-						style="--fa-fade-opacity: 0"
+						class="fa-brands fa-sass fa-2xl skills__card--item-icon"
 					></i>
-				</h2>
-
-				<div class="about__study">
-					<!-- make these expandable with subjects covered -->
-					<div class="about__study--item">
-						<p class="about__study--item-text">
-							Graduate Certificate of Information Technology
-						</p>
-						<p class="about__study--item-text">2021</p>
-						<img
-							src="./images/macquarie-university-1.svg"
-							width="100px"
-							alt=""
-							class="about__study--item-img"
-						/>
-					</div>
-					<div class="about__study--item">
-						<p class="about__study--item-text">
-							Graduate Certificate in Data Analytics
-						</p>
-						<p class="about__study--item-text">2021</p>
-						<img
-							src="./images/mit.png"
-							width="100px"
-							alt=""
-							class="about__study--item-img"
-						/>
-					</div>
-					<div class="about__study--item">
-						<p class="about__study--item-text">
-							Bachelor of Dental Science (Honours)
-						</p>
-						<p class="about__study--item-text">2016</p>
-						<img
-							src="./images/uq.svg"
-							width="100px"
-							alt=""
-							class="about__study--item-img"
-						/>
-					</div>
+					<p class="skills__card--item-text">SASS</p>
 				</div>
+				<div class="col">
+					<i
+						class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
+					></i>
+					<p class="skills__card--item-text">HTML5</p>
+				</div>
+				<div class="col">
+					<i
+						class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
+					></i>
+					<p class="skills__card--item-text">CSS3</p>
+				</div>
+				<div class="col">
+					<i
+						class="fa-brands fa-sass fa-2xl skills__card--item-icon"
+					></i>
+					<p class="skills__card--item-text">SASS</p>
+				</div>
+				<div class="col">
+					<i
+						class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
+					></i>
+					<p class="skills__card--item-text">HTML5</p>
+				</div>
+				<div class="col">
+					<i
+						class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
+					></i>
+					<p class="skills__card--item-text">CSS3</p>
+				</div>
+				<div class="col">
+					<i
+						class="fa-brands fa-sass fa-2xl skills__card--item-icon"
+					></i>
+					<p class="skills__card--item-text">SASS</p>
+				</div>
+			</div>
+		</section>
 
-				<!-- About Me Subsection -->
-				<div class="about__container">
-					<h2 class="about__head about__head--left">
-						I am
-						<i
-							class="fa-solid fa-window-minimize fa-fade"
-							style="--fa-fade-opacity: 0"
-						></i>
-					</h2>
-					<div class="about__me">
+		<!-- Projects -->
+		<section id="projects" class="container">
+			<h2 class="projects__head projects__head--center">
+				I've worked on
+				<i
+					class="fa-solid fa-window-minimize fa-fade"
+					style="--fa-fade-opacity: 0"
+				></i>
+			</h2>
+
+			<div class="projects__group">
+				<!-- Each project is a group item -->
+				<div class="projects__group__item">
+					<!-- Each project has a title-card with picture, name and link -->
+					<div class="projects__group__item--title-card">
 						<img
-							class="about__me--img"
 							src="placeholder.jpg"
-							class="about__img"
+							class="projects__group__item--thumbnail"
+							alt=""
 						/>
-						<p class="about__me--text">
-							I'm Austin, a software developer in training based
-							in Canberra, Australia. I love building and
-							automating things, and learning all things tech and
-							data. I also have an interest in healthcare, being a
-							qualified dentist. Perhaps I've even cleaned your
-							teeth!
-						</p>
+						<h3 class="projects__group__item--name">
+							Project Name
+						</h3>
+						<div class="projects__group__item--links">
+							<i class="fa-solid fa-code"></i>
+							<i class="fa-solid fa-rocket"></i>
+						</div>
 					</div>
+
+					<!-- Each project has a description -->
+					<p class="projects__group__item--dscrb">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea
+						commodo consequat.
+					</p>
 				</div>
-			</section>
-		</div>
+				<div class="projects__group__item">
+					<div class="projects__group__item--title-card">
+						<img
+							src="placeholder.jpg"
+							class="projects__group__item--thumbnail"
+							alt=""
+						/>
+						<h3 class="projects__group__item--name">
+							Project Name
+						</h3>
+						<div class="projects__group__item--links">
+							<i class="fa-solid fa-code"></i>
+							<i class="fa-solid fa-rocket"></i>
+						</div>
+					</div>
+
+					<p class="projects__group__item--dscrb">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea
+						commodo consequat.
+					</p>
+				</div>
+				<div class="projects__group__item">
+					<div class="projects__group__item--title-card">
+						<img
+							src="placeholder.jpg"
+							class="projects__group__item--thumbnail"
+							alt=""
+						/>
+						<h3 class="projects__group__item--name">
+							Project Name
+						</h3>
+						<div class="projects__group__item--links">
+							<i class="fa-solid fa-code"></i>
+							<i class="fa-solid fa-rocket"></i>
+						</div>
+					</div>
+
+					<p class="projects__group__item--dscrb">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea
+						commodo consequat.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- About Section -->
+		<section id="about" class="container">
+			<!-- Studies Sub-section -->
+			<h2 class="about__head about__head--right">
+				I've studied
+				<i
+					class="fa-solid fa-window-minimize fa-fade"
+					style="--fa-fade-opacity: 0"
+				></i>
+			</h2>
+
+			<div class="about__study">
+				<!-- make these expandable with subjects covered -->
+				<div class="about__study--item">
+					<p class="about__study--item-text">
+						Graduate Certificate of Information Technology
+					</p>
+					<p class="about__study--item-text">2021</p>
+					<img
+						src="./images/macquarie-university-1.svg"
+						width="100px"
+						alt=""
+						class="about__study--item-img"
+					/>
+				</div>
+				<div class="about__study--item">
+					<p class="about__study--item-text">
+						Graduate Certificate in Data Analytics
+					</p>
+					<p class="about__study--item-text">2021</p>
+					<img
+						src="./images/mit.png"
+						width="100px"
+						alt=""
+						class="about__study--item-img"
+					/>
+				</div>
+				<div class="about__study--item">
+					<p class="about__study--item-text">
+						Bachelor of Dental Science (Honours)
+					</p>
+					<p class="about__study--item-text">2016</p>
+					<img
+						src="./images/uq.svg"
+						width="100px"
+						alt=""
+						class="about__study--item-img"
+					/>
+				</div>
+			</div>
+
+			<!-- About Me Subsection -->
+			<div class="about__container">
+				<h2 class="about__head about__head--left">
+					I am
+					<i
+						class="fa-solid fa-window-minimize fa-fade"
+						style="--fa-fade-opacity: 0"
+					></i>
+				</h2>
+				<div class="about__me">
+					<img
+						class="about__me--img"
+						src="placeholder.jpg"
+						class="about__img"
+					/>
+					<p class="about__me--text">
+						I'm Austin, a software developer in training based in
+						Canberra, Australia. I love building and automating
+						things, and learning all things tech and data. I also
+						have an interest in healthcare, being a qualified
+						dentist. Perhaps I've even cleaned your teeth!
+					</p>
+				</div>
+			</div>
+		</section>
+		<!-- </div> -->
 
 		<!-- Footer Contact section -->
-		<footer id="contact" class="contact page-block">
+		<footer id="contact" class="container">
 			<h2 class="contact__head contact__head--center">Get In Touch</h2>
 			<i class="fa-solid fa-envelope fa-2xl"></i>
 			<a href="mailto:placeholder@placeholder.com"
