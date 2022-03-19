@@ -179,15 +179,21 @@ a {
 	// Padding and height for each section
 
 	min-height: 100vh;
-	padding: 10px 0px;
+	padding: 50px 0px;
 
 	// Text color for most content
 	color: palette.$text-color;
+
+	@include responsive.sm-up {
+		padding: 10px 0px;
+	}
 }
 
 .landing {
 	// Text color overwritten to black
 	color: palette.$landing-text;
+
+	// background-image: linear-gradient(palette.$lightest 10%, palette.$bright);
 
 	display: flex;
 	flex-direction: column;
@@ -195,21 +201,25 @@ a {
 	justify-content: center;
 
 	min-width: 80%;
-	padding: 0 5%;
+	// width: 100%;
 
 	text-align: right;
 
 	&__head {
 		text-transform: lowercase;
 		font-size: 3em;
+		// margin-right: 10%;
 	}
 
-	// &__subhead {
-	// }
+	&__subhead {
+		// margin-right: 10%;
+	}
 
 	&__text {
 		background-color: palette.$landing-text;
 		transition: 0.2s;
+
+		// margin-right: 10%;
 
 		&:hover {
 			background-color: rgba(0, 0, 0, 0);
@@ -286,7 +296,7 @@ a {
 			align-items: center;
 			max-width: 500px;
 
-			background-color: palette.$lightest;
+			background-color: rgba(palette.$lightest, 0.5);
 			color: palette.$landing-text;
 			border-radius: 10px;
 
@@ -304,6 +314,7 @@ a {
 
 			&--thumbnail {
 				width: 200px;
+				border-radius: 20px;
 			}
 
 			&--dscrb {
@@ -354,6 +365,10 @@ a {
 			}
 		}
 	}
+	// &__container {
+	// 	// background-color: white;
+	// 	color: black;
+	// }
 
 	&__me {
 		// Centered and responsive wrapping blurb and photo
@@ -379,12 +394,13 @@ a {
 	@include headings;
 
 	padding: 20px;
-	min-height: 100px;
+	min-height: 50vh;
 	background-color: palette.$darkest;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 
 	&__head {
 		margin: 0;
