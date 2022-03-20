@@ -23,9 +23,9 @@
 			font-size: 2em;
 		}
 
-		@include responsive.lg-up {
-			margin: 100px;
-		}
+		// @include responsive.lg-up {
+		// 	margin: 100px;
+		// }
 
 		&--left {
 			text-align: left;
@@ -80,7 +80,7 @@ a {
 	// Keeps navbar at top of window and top layer
 	position: fixed;
 	top: 0;
-	z-index: 1;
+	z-index: 5;
 
 	&__logo {
 		@extend %unpad;
@@ -179,10 +179,15 @@ a {
 	// Padding and height for each section
 
 	min-height: 100vh;
-	padding: 50px 0px;
+	padding: 50px 20px;
 
 	// Text color for most content
 	color: palette.$text-color;
+
+	// Try sticky scrolling
+	// position: -webkit-sticky;
+	// position: sticky;
+	// top: 0;
 
 	@include responsive.sm-up {
 		padding: 10px 0px;
@@ -236,7 +241,7 @@ a {
 
 	// skills__card contains all coding items
 	&__card {
-		padding: 10px;
+		padding: 20px;
 
 		// Single column on small screens
 		display: flex;
@@ -245,14 +250,17 @@ a {
 
 		@include responsive.sm-up {
 			// Centered and wrapped for responsiveness
+			padding: 20px 80px;
+			height: 50vh;
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: center;
+			align-content: space-around;
 		}
 
 		// Class for each item (logo + text)
 		&--item {
-			font-size: 1.5em;
+			font-size: 1.7em;
 			width: 150px;
 			display: flex;
 			align-items: center;
@@ -271,17 +279,29 @@ a {
 .projects {
 	@include headings;
 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	// background-color: rgba(white, 0.1);
+
 	&__group {
 		// Single column list centered on small screens
-		display: flex;
+		display: inline-flex;
 		flex-direction: column;
 		align-items: center;
+		// background-color: rgba(palette.$lightest, 0.5);
+		// border-radius: 50px;
 
 		// Centered esponsive row list on larger screens
 		@include responsive.sm-up {
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: center;
+			// max-width: fit-content;
+			// only allows single column
+
+			margin: 0px 50px;
 		}
 
 		&__item {
@@ -296,9 +316,9 @@ a {
 			align-items: center;
 			max-width: 500px;
 
-			background-color: rgba(palette.$lightest, 0.5);
-			color: palette.$landing-text;
-			border-radius: 10px;
+			// background-color: rgba(palette.$lightest, 0.5);
+			// color: palette.$landing-text;
+			// border-radius: 10px;
 
 			// Item cards will not wrap on larger screens
 			@include responsive.sm-up {
@@ -315,10 +335,21 @@ a {
 			&--thumbnail {
 				width: 200px;
 				border-radius: 20px;
+				filter: grayscale(100);
+
+				&:hover {
+					filter: none;
+				}
 			}
 
 			&--dscrb {
 				padding: 0 20px;
+
+				display: none;
+
+				@include responsive.lg-up {
+					display: inline;
+				}
 			}
 		}
 	}
@@ -327,8 +358,18 @@ a {
 .about {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 
-	margin-bottom: 50px;
+	background-color: rgba(rgb(51, 51, 51), 0.5);
+
+	min-height: 100vh;
+	max-width: inherit;
+
+	@include responsive.lg-up {
+		min-height: 50vh;
+	}
+
+	padding-bottom: 50px;
 
 	@include headings;
 
@@ -384,7 +425,7 @@ a {
 		}
 
 		&--text {
-			max-width: 500px;
+			max-width: 360px;
 			padding: 10px;
 		}
 	}
@@ -393,21 +434,49 @@ a {
 .contact {
 	@include headings;
 
-	padding: 20px;
-	min-height: 50vh;
-	background-color: palette.$darkest;
+	padding: 50px 20px 0px 20px;
+	// min-height: 50vh;
+	// background-color: palette.$darkest;
+	color: black;
+	background-color: palette.$lightest;
 
 	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 
+	z-index: 1;
+
+	&__group {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	& h2 {
+		margin: 20px;
+	}
+
+	& a {
+		color: black;
+	}
+
+	&__container {
+		// padding: 20px;
+	}
+
 	&__head {
-		margin: 0;
-		padding: 20px;
 	}
 
 	&__text {
-		text-align: center;
+		// text-align: center;
+	}
+
+	&__icons {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 20px;
+		// align-items: center;
 	}
 }
