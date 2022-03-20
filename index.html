@@ -83,37 +83,6 @@
 			</div>
 		</nav>
 
-		<!-- <header class="navbar">
-			<h2 class="navbar__logo">a_st_n.</h2>
-			<div class="navbar__menu">
-				menu to collapse with hamburger menu 
-				<div class="navbar__menu__hBtn" onclick="toggleMenu();">
-					<div class="navbar__menu__hBtn--bar1"></div>
-					<div class="navbar__menu__hBtn--bar2"></div>
-					<div class="navbar__menu__hBtn--bar3"></div>
-				</div>
-				<nav>
-					<ul class="navbar__menu__container">
-						<li class="navbar__menu__container__item">
-							<a href="#home">Home</a>
-						</li>
-						<li class="navbar__menu__container__item">
-							<a href="#skills">Skills</a>
-						</li>
-						<li class="navbar__menu__container__item">
-							<a href="#projects">Projects</a>
-						</li>
-						<li class="navbar__menu__container__item">
-							<a href="#about">About</a>
-						</li>
-						<li class="navbar__menu__container__item">
-							<a href="#contact">Contact</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</header> -->
-
 		<!-- Content container for everything except footer -->
 		<!-- <div class="content"> -->
 		<!-- Landing -->
@@ -126,69 +95,94 @@
 		</section>
 
 		<!-- Tech Skills -->
-		<section id="skills" class="container">
-			<h2 class="row">
-				I can code in
-				<i
-					class="fa-solid fa-window-minimize fa-fade"
-					style="--fa-fade-opacity: 0"
-				></i>
-			</h2>
+		<section
+			id="skills"
+			class="d-flex flex-column vh-100 justify-content-center align-items-stretch"
+		>
+			<div class="container justify-content-start align-items-center">
+				<h2 class="col-md-6">
+					I can code in
+					<i
+						class="fa-solid fa-window-minimize fa-fade col"
+						style="--fa-fade-opacity: 0"
+					></i>
+				</h2>
+			</div>
 
-			<div class="row">
-				<div class="col">
-					<i
-						class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
-					></i>
-					<p class="skills__card--item-text">HTML5</p>
+			<div
+				class="d-flex h-50 flex-row flex-wrap justify-content-center align-content-around"
+			>
+				<div class="skill__item fs-3 d-flex align-items-center m-2">
+					<p class="skills__card--item-text">
+						<i
+							class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
+						></i>
+						HTML5
+					</p>
 				</div>
-				<div class="col">
-					<i
-						class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
-					></i>
-					<p class="skills__card--item-text">CSS3</p>
+				<div class="skill__item fs-3 d-flex align-items-center m-2">
+					<p class="skills__card--item-text">
+						<i
+							class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
+						></i>
+						CSS3
+					</p>
 				</div>
-				<div class="col">
-					<i
-						class="fa-brands fa-sass fa-2xl skills__card--item-icon"
-					></i>
-					<p class="skills__card--item-text">SASS</p>
+				<div class="skill__item fs-3 d-flex align-items-center m-2">
+					<p class="skills__card--item-text">
+						<i
+							class="fa-brands fa-sass fa-2xl skills__card--item-icon"
+						></i>
+						SASS
+					</p>
 				</div>
-				<div class="col">
-					<i
-						class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
-					></i>
-					<p class="skills__card--item-text">HTML5</p>
+				<div class="skill__item fs-3 d-flex align-items-center m-2">
+					<p class="skills__card--item-text">
+						<i
+							class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
+						></i>
+						HTML5
+					</p>
 				</div>
-				<div class="col">
-					<i
-						class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
-					></i>
-					<p class="skills__card--item-text">CSS3</p>
+				<div class="skill__item fs-3 d-flex align-items-center m-2">
+					<p class="skills__card--item-text">
+						<i
+							class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
+						></i>
+						CSS3
+					</p>
 				</div>
-				<div class="col">
-					<i
-						class="fa-brands fa-sass fa-2xl skills__card--item-icon"
-					></i>
-					<p class="skills__card--item-text">SASS</p>
+				<div class="skill__item fs-3 d-flex align-items-center m-2">
+					<p class="skills__card--item-text">
+						<i
+							class="fa-brands fa-sass fa-2xl skills__card--item-icon"
+						></i>
+						SASS
+					</p>
 				</div>
-				<div class="col">
-					<i
-						class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
-					></i>
-					<p class="skills__card--item-text">HTML5</p>
+				<div class="skill__item fs-3 d-flex align-items-center m-2">
+					<p class="skills__card--item-text">
+						<i
+							class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
+						></i>
+						HTML5
+					</p>
 				</div>
-				<div class="col">
-					<i
-						class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
-					></i>
-					<p class="skills__card--item-text">CSS3</p>
+				<div class="skill__item fs-3 d-flex align-items-center m-2">
+					<p class="skills__card--item-text">
+						<i
+							class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
+						></i>
+						CSS3
+					</p>
 				</div>
-				<div class="col">
-					<i
-						class="fa-brands fa-sass fa-2xl skills__card--item-icon"
-					></i>
-					<p class="skills__card--item-text">SASS</p>
+				<div class="skill__item fs-3 d-flex align-items-center m-2">
+					<p class="skills__card--item-text">
+						<i
+							class="fa-brands fa-sass fa-2xl skills__card--item-icon"
+						></i>
+						SASS
+					</p>
 				</div>
 			</div>
 		</section>
