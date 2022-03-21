@@ -19,3 +19,8 @@
 	background-color: palette.$darkest;
 	color: palette.$light-text;
 }
+
+%dark-on-light {
+	background-color: palette.$lightest;
+	color: palette.$dark-text;
+}

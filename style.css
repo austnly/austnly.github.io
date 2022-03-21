@@ -22,6 +22,11 @@ body {
   color: white;
 }
 
+.projects {
+  background-color: #f4f8ff;
+  color: black;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -231,8 +236,7 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f4f8ff;
-  color: black;
+  flex-wrap: nowrap;
   z-index: 1;
 }
 .projects__head {
@@ -258,14 +262,17 @@ a:hover {
 .projects__group {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: inherit;
+  flex-wrap: nowrap;
 }
 @media only screen and (min-width: 576px) {
   .projects__group {
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
 }
 .projects__group__item {
@@ -273,28 +280,22 @@ a:hover {
   margin: 10px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
   max-width: 500px;
-}
-@media only screen and (min-width: 576px) {
-  .projects__group__item {
-    flex-wrap: nowrap;
-  }
 }
 .projects__group__item--title-card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  flex-wrap: nowrap;
 }
 .projects__group__item--thumbnail {
   width: 200px;
   border-radius: 20px;
-  filter: grayscale(100);
-}
-.projects__group__item--thumbnail:hover {
-  filter: none;
+  transition: 0.5s;
 }
 .projects__group__item--dscrb {
   padding: 0 20px;
@@ -304,6 +305,9 @@ a:hover {
   .projects__group__item--dscrb {
     display: inline;
   }
+}
+.projects__group__item:hover img {
+  filter: grayscale(100);
 }
 
 .quals {
