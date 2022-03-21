@@ -17,18 +17,23 @@
 
 		<script src="index.js"></script>
 
-		<title>Austin Ly | Software Developer</title>
+		<title>Austin Ly | Web Developer</title>
 	</head>
 	<body id="home">
 		<header class="navbar">
+			<!-- Navbar Logo -->
 			<h2 class="navbar__logo">a_st_n.</h2>
+
+			<!-- Menu Container -->
 			<div class="navbar__menu">
-				<!-- menu to collapse with hamburger menu -->
+				<!-- Hamburger Button -->
 				<div class="navbar__menu__hBtn" onclick="toggleMenu();">
 					<div class="navbar__menu__hBtn--bar1"></div>
 					<div class="navbar__menu__hBtn--bar2"></div>
 					<div class="navbar__menu__hBtn--bar3"></div>
 				</div>
+
+				<!-- Menu Links -->
 				<nav>
 					<ul class="navbar__menu__container">
 						<li class="navbar__menu__container__item">
@@ -39,6 +44,9 @@
 						</li>
 						<li class="navbar__menu__container__item">
 							<a href="#projects">Projects</a>
+						</li>
+						<li class="navbar__menu__container__item">
+							<a href="#quals">Quals</a>
 						</li>
 						<li class="navbar__menu__container__item">
 							<a href="#about">About</a>
@@ -56,9 +64,9 @@
 			<!-- Landing -->
 			<section class="landing page-block">
 				<h1 class="landing__head">Hi, I'm Austin!</h1>
-				<h4 class="landing__subhead">
-					_nology Software Development Trainee
-				</h4>
+				<h3 class="landing__subhead">
+					_nology Web Development Trainee
+				</h3>
 				<p class="landing__text" onclick="touchHover(this);">Dentist</p>
 			</section>
 
@@ -74,10 +82,12 @@
 
 				<div class="skills__card">
 					<div class="skills__card--item">
-						<i
-							class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
-						></i>
-						<p class="skills__card--item-text">HTML5</p>
+						<p class="skills__card--item-text">
+							<i
+								class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
+							></i>
+							HTML5
+						</p>
 					</div>
 					<div class="skills__card--item">
 						<i
@@ -89,43 +99,57 @@
 						<i
 							class="fa-brands fa-sass fa-2xl skills__card--item-icon"
 						></i>
-						<p class="skills__card--item-text">SASS</p>
+						<p class="skills__card--item-text">SCSS/Sass</p>
 					</div>
 					<div class="skills__card--item">
 						<i
-							class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
+							class="fa-brands fa-js-square fa-2xl skills__card--item-icon"
 						></i>
-						<p class="skills__card--item-text">HTML5</p>
+						<p class="skills__card--item-text">JavaScript</p>
 					</div>
 					<div class="skills__card--item">
 						<i
-							class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
+							class="fa-brands fa-git-square fa-2xl skills__card--item-icon"
 						></i>
-						<p class="skills__card--item-text">CSS3</p>
+						<p class="skills__card--item-text">git</p>
 					</div>
 					<div class="skills__card--item">
 						<i
-							class="fa-brands fa-sass fa-2xl skills__card--item-icon"
+							class="fa-brands fa-java fa-2xl skills__card--item-icon"
 						></i>
-						<p class="skills__card--item-text">SASS</p>
+						<p class="skills__card--item-text">Java</p>
 					</div>
 					<div class="skills__card--item">
 						<i
-							class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
+							class="fa-brands fa-react fa-2xl skills__card--item-icon"
 						></i>
-						<p class="skills__card--item-text">HTML5</p>
+						<p class="skills__card--item-text">ReactJS</p>
 					</div>
 					<div class="skills__card--item">
 						<i
-							class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
+							class="fa-brands fa-aws fa-2xl skills__card--item-icon"
 						></i>
-						<p class="skills__card--item-text">CSS3</p>
+						<p class="skills__card--item-text">AWS</p>
 					</div>
 					<div class="skills__card--item">
 						<i
-							class="fa-brands fa-sass fa-2xl skills__card--item-icon"
+							class="fa-solid fa-database fa-2xl skills__card--item-icon"
 						></i>
-						<p class="skills__card--item-text">SASS</p>
+						<p class="skills__card--item-text">SQL</p>
+					</div>
+					<div class="skills__card--item">
+						<i
+							class="fa-solid fa-leaf fa-2xl skills__card--item-icon"
+						></i>
+						<p class="skills__card--item-text">SpringBoot</p>
+					</div>
+					<div class="skills__card--item">
+						<i
+							class="fa-brands fa-google fa-2xl skills__card--item-icon"
+						></i>
+						<p class="skills__card--item-text">
+							FireBase & FireStore
+						</p>
 					</div>
 				</div>
 			</section>
@@ -146,7 +170,7 @@
 						<!-- Each project has a title-card with picture, name and link -->
 						<div class="projects__group__item--title-card">
 							<img
-								src="placeholder.jpg"
+								src="./images/placeholder.jpg"
 								class="projects__group__item--thumbnail"
 								alt=""
 							/>
@@ -171,7 +195,7 @@
 					<div class="projects__group__item">
 						<div class="projects__group__item--title-card">
 							<img
-								src="placeholder.jpg"
+								src="./images/placeholder.jpg"
 								class="projects__group__item--thumbnail"
 								alt=""
 							/>
@@ -195,7 +219,7 @@
 					<div class="projects__group__item">
 						<div class="projects__group__item--title-card">
 							<img
-								src="placeholder.jpg"
+								src="./images/placeholder.jpg"
 								class="projects__group__item--thumbnail"
 								alt=""
 							/>
@@ -220,9 +244,9 @@
 			</section>
 
 			<!-- About Section -->
-			<section id="about" class="about page-block">
+			<section id="quals" class="quals page-block">
 				<!-- Studies Sub-section -->
-				<h2 class="about__head about__head--right">
+				<h2 class="quals__head quals__head--right">
 					I've studied
 					<i
 						class="fa-solid fa-window-minimize fa-fade"
@@ -230,78 +254,76 @@
 					></i>
 				</h2>
 
-				<div class="about__study">
+				<div class="quals__study">
 					<!-- make these expandable with subjects covered -->
-					<div class="about__study--item">
-						<p class="about__study--item-text">
+					<div class="quals__study--item">
+						<p class="quals__study--item-text">
 							Graduate Certificate of Information Technology
 						</p>
-						<p class="about__study--item-text">2021</p>
+						<p class="quals__study--item-text">2021</p>
 						<img
 							src="./images/macquarie-university-1.svg"
 							width="100px"
 							alt=""
-							class="about__study--item-img"
+							class="quals__study--item-img"
 						/>
 					</div>
-					<div class="about__study--item">
-						<p class="about__study--item-text">
+					<div class="quals__study--item">
+						<p class="quals__study--item-text">
 							Graduate Certificate in Data Analytics
 						</p>
-						<p class="about__study--item-text">2021</p>
+						<p class="quals__study--item-text">2021</p>
 						<img
 							src="./images/mit.png"
 							width="100px"
 							alt=""
-							class="about__study--item-img"
+							class="quals__study--item-img"
 						/>
 					</div>
-					<div class="about__study--item">
-						<p class="about__study--item-text">
+					<div class="quals__study--item">
+						<p class="quals__study--item-text">
 							Bachelor of Dental Science (Honours)
 						</p>
-						<p class="about__study--item-text">2016</p>
+						<p class="quals__study--item-text">2016</p>
 						<img
 							src="./images/uq.svg"
 							width="100px"
 							alt=""
-							class="about__study--item-img"
+							class="quals__study--item-img"
 						/>
 					</div>
 				</div>
-
-				<!-- About Me Subsection -->
 			</section>
 		</div>
 
 		<!-- Footer Contact section -->
-		<footer id="contact" class="contact page-block">
-			<div class="contact__group">
-				<div class="about__container">
-					<h2 class="about__head about__head--left">
+		<footer id="about" class="about page-block">
+			<div class="about__group">
+				<!-- About Me Subsection -->
+				<div class="about-me">
+					<h2 class="about-me__head about-me__head--left">
 						I am
 						<i
 							class="fa-solid fa-window-minimize fa-fade"
 							style="--fa-fade-opacity: 0"
 						></i>
 					</h2>
-					<div class="about__me">
+					<div class="about-me__card">
 						<img
-							class="about__me--img"
-							src="placeholder.jpg"
-							class="about__img"
+							class="about-me__card--img"
+							src="./images/placeholder.jpg"
 						/>
-						<p class="about__me--text">
-							I'm Austin, a software developer in training based
-							in Canberra, Australia. I love building and
-							automating things, and learning all things tech and
-							data. I also have an interest in healthcare, being a
+						<p class="about-me__card--text">
+							I'm Austin, a web developer in training based in
+							Canberra, Australia. I love building and automating
+							things, and learning all things tech and data. I
+							also have an interest in healthcare, being a
 							qualified dentist. Perhaps I've even cleaned your
 							teeth!
 						</p>
 					</div>
 				</div>
-				<div class="contact__container">
+				<div id="contact" class="contact">
 					<h2 class="contact__head contact__head--center">
 						Get In Touch
 					</h2>
@@ -331,6 +353,9 @@
 					</div>
 				</div>
 			</div>
+			<p class="about__signature">
+				Built in HTML, Sass and JS by Austin Ly.
+			</p>
 		</footer>
 	</body>
 </html>

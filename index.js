@@ -14,8 +14,4 @@ const toggleMenu = () => {
 	let contentActive = document.querySelector(".-active");
 
 	menu.classList.toggle("--active");
-	// content.classList.toggle("-active");
-
-	// contentActive.style.paddingTop =
-	// 	document.querySelector(".navbar").offsetHeight + "px";
 };
