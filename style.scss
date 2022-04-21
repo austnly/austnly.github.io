@@ -1,89 +1,29 @@
-@use "palette";
-@use "typography";
-@use "responsive";
+@use "./partials/palette";
+@use "./partials/typography";
+@use "./partials/responsive";
+@use "./modules/extends.scss";
+@use "./modules/mixins.scss";
+@use "./modules/base.scss";
 
-%unpad {
-	margin: 0;
-	padding: 0;
-}
-
-%unlist {
-	list-style: none;
-	@extend %unpad;
-}
-
-@mixin headings {
-	&__head {
-		font-size: 1.7em;
-		margin: 20px;
-		transition: 0.5s;
-
-		@include responsive.sm-up {
-			margin: 50px;
-			font-size: 2em;
-		}
-
-		// @include responsive.lg-up {
-		// 	margin: 100px;
-		// }
-
-		&--left {
-			text-align: left;
-		}
-
-		&--center {
-			text-align: center;
-		}
-
-		&--right {
-			text-align: right;
-		}
-	}
-}
-
-html {
-	@extend %unpad;
-}
-
-body {
-	@extend %unpad;
-	@extend %use-roboto-m;
-}
-
-footer {
-	@extend %unpad;
-}
-
-a {
-	color: palette.$text-color;
-	text-decoration: none;
-}
-
+// Nav Bar
 .navbar {
-	@extend %unpad;
-	display: flex;
-	flex-direction: row;
+	@include mixins.flex-it(row, space-between, center, nowrap);
 
-	color: palette.$landing-text;
-	// justify-content: center;
-	// align-items: center;
-
-	// @include responsive.sm-up {
-	justify-content: space-between;
-	align-items: center;
-	// }
+	color: palette.$dark-text;
 
 	background-color: palette.$lightest;
 	width: 100%;
-	transition: 3s;
+	transition: 2s;
 
 	// Keeps navbar at top of window and top layer
 	position: fixed;
 	top: 0;
-	z-index: 5;
+	z-index: 2;
 
+	// Logo Styling
 	&__logo {
-		@extend %unpad;
+		@extend %reset;
+
 		padding: 10px;
 		margin-left: 5vw;
 		transition: 1s;
@@ -93,25 +33,39 @@ a {
 		}
 	}
 
+	// Menu Styling
 	&__menu {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
+		// Links listed in column on small screens
+		@include mixins.flex-it(column, center, flex-end, nowrap);
 
+		//Hamburger Button
 		&__hBtn {
-			margin: 10px;
-			cursor: pointer;
+			padding: 4px 10px 10px 10px;
+			margin: 5px;
 
-			@include responsive.sm-up {
-				display: none;
-			}
+			// Button Styling
+			cursor: pointer;
+			border: 1px solid rgba(grey, 0.3);
+			border-radius: 5px;
 
 			div {
-				background-color: palette.$landing-text;
+				background-color: palette.$dark-text;
 				width: 35px;
 				height: 5px;
 				margin-top: 6px;
 				border-radius: 4px;
+			}
+
+			&:hover {
+				div {
+					background-color: palette.$deeper;
+					transition: 0.5s;
+				}
+			}
+
+			// Disappears on larger screens
+			@include responsive.md-up {
+				display: none;
 			}
 		}
 
@@ -119,112 +73,87 @@ a {
 			@extend %unlist;
 
 			// Links do not show on small screens
-			// To change to hamburger menu
-
 			display: none;
 
+			// Class toggles when hamButton is clicked
 			&.--active {
-				display: flex;
-				flex-direction: column;
+				@include mixins.flex-it(column, flex-end, flex-end, nowrap);
+
 				text-align: right;
 			}
 
+			// Each link
 			&__item {
 				padding: 10px;
-
-				a {
-					color: palette.$landing-text;
-					transition: 0.5s;
-				}
-
-				a:hover {
-					color: palette.$deeper;
-				}
 			}
 
 			// Links show on larger screens
-			@include responsive.sm-up {
-				display: flex;
-				flex-direction: row;
+			@include responsive.md-up {
+				@include mixins.flex-it(row, flex-end, center, nowrap);
 			}
 		}
 	}
 }
 
-// .navbar__menu__container.--active {
-// 	display: flex;
-// 	flex-direction: column;
-// }
-
+// Contains all content except footer
 .content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	@include mixins.flex-it(column, center, center, nowrap);
+
 	width: 100%;
 
-	// Background gradient
+	// Background gradient/shadow effect over Landing
 	background-image: linear-gradient(
 		palette.$lightest 5%,
-		palette.$deeper,
-		palette.$deepest
+		palette.$darkest 95%
 	);
-
-	&.-active {
-		padding-top: 0;
-	}
 }
 
+// Each section of the page
 .page-block {
-	@extend %unpad;
-	// Padding and height for each section
-
-	min-height: 100vh;
-	padding: 50px 20px;
-
-	// Text color for most content
-	color: palette.$text-color;
-
-	// Try sticky scrolling
-	// position: -webkit-sticky;
-	// position: sticky;
-	// top: 0;
+	@extend %reset;
+	// Responsive for each section
+	padding: 50px 0px;
 
 	@include responsive.sm-up {
-		padding: 10px 0px;
+		padding: 20px 0px;
 	}
+	// Each section fills viewport by default
+	min-height: 100vh;
+	width: 100%;
+
+	// Fixes safari sticky scrolling bug
+	transform: translate3d(0, 0, 0);
 }
 
+// Landing section
 .landing {
-	// Text color overwritten to black
-	color: palette.$landing-text;
+	@include mixins.flex-it(column, center, flex-end, nowrap);
 
-	// background-image: linear-gradient(palette.$lightest 10%, palette.$bright);
-
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	justify-content: center;
-
-	min-width: 80%;
-	// width: 100%;
-
+	// Text color & alignment when wrapped
+	color: palette.$dark-text;
 	text-align: right;
 
+	// Sticky scroll effect
+	position: sticky;
+	top: 0;
+	// Section hides when scrolling down
+	z-index: 0;
+
+	// Text styling
 	&__head {
+		@extend %margin-sides;
 		text-transform: lowercase;
 		font-size: 3em;
-		// margin-right: 10%;
 	}
 
 	&__subhead {
-		// margin-right: 10%;
+		@extend %margin-sides;
 	}
 
 	&__text {
-		background-color: palette.$landing-text;
+		@extend %margin-sides;
+		background-color: palette.$dark-text;
 		transition: 0.2s;
-
-		// margin-right: 10%;
 
 		&:hover {
 			background-color: rgba(0, 0, 0, 0);
@@ -232,42 +161,34 @@ a {
 	}
 }
 
+// Skills section
 .skills {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	@extend %light-on-dark;
+	@include mixins.flex-it(column, center, flex-start);
+	@include mixins.headings;
 
-	@include headings;
+	// Scrolls over landing
+	z-index: 1;
 
-	// skills__card contains all coding items
+	// skills__card contains each stack item
 	&__card {
-		padding: 20px;
+		@extend %margin-sides;
+		margin: 0px auto;
 
 		// Single column on small screens
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+		@include mixins.flex-it(column, center, center);
 
 		@include responsive.sm-up {
 			// Centered and wrapped for responsiveness
-			padding: 20px 80px;
-			height: 50vh;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-content: space-around;
+			@include mixins.flex-it(row, center, space-around, wrap);
 		}
 
 		// Class for each item (logo + text)
 		&--item {
-			font-size: 1.7em;
-			width: 150px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			font-size: 1.5em;
+			margin: 10px;
 
-			// &-icon {
-			// }
+			@include mixins.flex-it(row, center, center, nowrap);
 
 			&-text {
 				margin-left: 10px;
@@ -276,32 +197,21 @@ a {
 	}
 }
 
+// Projects section
 .projects {
-	@include headings;
+	@extend %dark-on-light;
+	@include mixins.headings;
+	@include mixins.flex-it(column, center, center, nowrap);
 
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	// background-color: rgba(white, 0.1);
+	z-index: 1;
 
 	&__group {
 		// Single column list centered on small screens
-		display: inline-flex;
-		flex-direction: column;
-		align-items: center;
-		// background-color: rgba(palette.$lightest, 0.5);
-		// border-radius: 50px;
+		@include mixins.flex-it(column, center, center);
 
-		// Centered esponsive row list on larger screens
+		// Centered responsive row list on larger screens
 		@include responsive.sm-up {
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: center;
-			// max-width: fit-content;
-			// only allows single column
-
-			margin: 0px 50px;
+			@include mixins.flex-it(row, center, flex-start, wrap);
 		}
 
 		&__item {
@@ -309,69 +219,64 @@ a {
 			margin: 10px;
 
 			// Each item card is 500px wide and will wrap to a single column on a small screen
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
+			@include mixins.flex-it(row, center, center, nowrap);
 			max-width: 500px;
-
-			// background-color: rgba(palette.$lightest, 0.5);
-			// color: palette.$landing-text;
-			// border-radius: 10px;
-
-			// Item cards will not wrap on larger screens
-			@include responsive.sm-up {
-				flex-wrap: nowrap;
-			}
 
 			// Title cards display thumbnail, name and links in a column
 			&--title-card {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
+				@include mixins.flex-it(column, flex-start, center, nowrap);
 			}
 
 			&--thumbnail {
 				width: 200px;
+				height: 250px;
+				object-fit: cover;
 				border-radius: 20px;
-				filter: grayscale(100);
-
-				&:hover {
-					filter: none;
-				}
+				transition: 0.5s;
 			}
 
 			&--dscrb {
 				padding: 0 20px;
 
+				// Text hidden on smaller screens
 				display: none;
 
+				// Text shows on larger screens
 				@include responsive.lg-up {
 					display: inline;
+				}
+			}
+
+			&:hover {
+				img {
+					filter: grayscale(100);
 				}
 			}
 		}
 	}
 }
+// Need to add expand project desc on mobile
 
-.about {
+.quals {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 
-	background-color: rgba(rgb(51, 51, 51), 0.5);
+	background-color: palette.$darkest;
+	color: palette.$light-text;
 
 	min-height: 100vh;
-	max-width: inherit;
+	width: 100%;
+
+	z-index: 1;
 
 	@include responsive.lg-up {
-		min-height: 50vh;
+		min-height: 45vh;
 	}
 
 	padding-bottom: 50px;
 
-	@include headings;
+	@include mixins.headings;
 
 	&__study {
 		padding: 0px 20px;
@@ -388,13 +293,13 @@ a {
 			text-align: right;
 
 			&-text {
-				@extend %unpad;
+				@extend %reset;
 				margin: 5px;
 				text-transform: uppercase;
 			}
 
 			&-img {
-				@extend %unpad;
+				@extend %reset;
 
 				// Make image white
 				filter: brightness(0%) grayscale(100%) invert(100%);
@@ -410,39 +315,24 @@ a {
 	// 	// background-color: white;
 	// 	color: black;
 	// }
-
-	&__me {
-		// Centered and responsive wrapping blurb and photo
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-
-		&--img {
-			max-width: 300px;
-			border-radius: 200px;
-			margin: 0 5vw;
-		}
-
-		&--text {
-			max-width: 360px;
-			padding: 10px;
-		}
-	}
 }
+// Need to add expand subjects studied
 
-.contact {
-	@include headings;
+.about {
+	@include mixins.headings;
 
-	padding: 50px 20px 0px 20px;
+	// padding: 50px 0px 0px 0px;
 	// min-height: 50vh;
 	// background-color: palette.$darkest;
 	color: black;
 	background-color: palette.$lightest;
 
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	// align-items: center;
 	justify-content: center;
+
+	min-height: 100vh;
 
 	z-index: 1;
 
@@ -455,7 +345,44 @@ a {
 
 	& h2 {
 		margin: 20px;
+		padding: 50px;
 	}
+
+	position: relative;
+
+	&-me__card {
+		// Centered and responsive wrapping blurb and photo
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		&--img {
+			filter: grayscale(0);
+			max-width: 300px;
+			border-radius: 200px;
+			margin: 0 5vw;
+			box-shadow: 0 0 20px rgba(black, 0.3);
+		}
+
+		&--text {
+			max-width: 360px;
+			padding: 10px;
+		}
+	}
+
+	&__signature {
+		text-align: right;
+		width: 100%;
+		// margin-top: auto;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+.contact {
+	@include mixins.headings();
 
 	& a {
 		color: black;
@@ -476,7 +403,9 @@ a {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		padding: 20px;
+		padding: 20px 20px 50px 20px;
 		// align-items: center;
 	}
 }
+
+// Fix content padding
