@@ -294,6 +294,8 @@ a:hover {
 }
 .projects__group__item--thumbnail {
   width: 200px;
+  height: 250px;
+  object-fit: cover;
   border-radius: 20px;
   transition: 0.5s;
 }
@@ -416,9 +418,11 @@ a:hover {
   justify-content: center;
 }
 .about-me__card--img {
+  filter: grayscale(0);
   max-width: 300px;
   border-radius: 200px;
   margin: 0 5vw;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 .about-me__card--text {
   max-width: 360px;
